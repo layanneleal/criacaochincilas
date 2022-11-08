@@ -4,14 +4,29 @@ function triplicarChinchilas() {
   let inAno = document.getElementById('inAno')
   let outResposta = document.getElementById('outResposta')
 
-  let numero = Number(inNumero.value)
+  let animal = Number(inNumero.value)
   let ano = Number(inAno.value)
 
-  if (numero < 2 && numero == 0 ) {
+
+  let resultado = ''
+
+  if (animal <= 2 && animal == 0 ) {
     alert('Digite um número correto (casal)')
     inNumero.onfocus()
     return
   }
-  
+
+  for (let animal = 1; animal <= ano; animal ++ ) {
+    if (animal == 1) {
+      resultado += animal + '° ano: ' + animal + '\n'
+
+  }else{
+      animal = animal * 3
+      resultado += animal + '° ano: ' + animal + '\n'
+  }
+}
+  outResposta.textContent = resultado
 
 }
+let btMostrar = document.getElementById('btMostrar')
+btMostrar.addEventListener('click', triplicarChinchilas)
